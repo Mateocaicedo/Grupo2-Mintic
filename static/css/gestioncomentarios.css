@@ -1,0 +1,50 @@
+#contenido-card{
+    margin: auto;
+    transition-duration: 0.30s;
+}
+#tablecomment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    height: 30rem;
+    overflow-y: scroll;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+
+    border: solid 3px black;
+    border-radius: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.mr10{
+    margin: 10px;
+}
+.card-vuelos {
+    display: flex;
+}
+.card-reacciones{
+    display: flex;
+}
+.card-comentario{
+    font-size: 14px;
+}
+@media screen and (min-width: 1317px) {
+    #contenido-card{
+        display: flex;
+        transition-duration: 0.30s;
+        width: 65rem;
+    }
+    
+ }

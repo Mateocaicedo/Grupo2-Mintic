@@ -1,0 +1,257 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: #4C5658; 
+}
+
+:root{
+    --blanco:#FFFFFF;
+    --fuentep: 1.5rem;
+    --grisletras: #4C5658;
+    --azul:rgba(26,45,75,1);
+    --azulclaro: #A1D6E2;
+    --rojo: rgba(226,0,26,1); 
+    --rojo1: rgb(175, 36, 36);
+    --blanco2:rgb(211, 205, 205);
+}
+
+img{
+    width: 9rem;
+    height: 9rem;
+}
+
+.cuerpo{
+    min-height: 20vh;
+    background-color: var(--azulclaro);
+    width: auto;
+    min-height: calc(100vh - 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    max-width: min-content;
+    align-items: center;
+}
+
+
+.control{
+    margin-bottom: 1.5rem;
+}
+/* estilo para los inputs */
+input#txt{
+    border-radius: 2rem;
+    width: 19rem;
+    height: 2.8rem;
+    font-size: 1.1rem;
+    text-align: left;
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+}
+
+input#txt:hover{
+    outline: none;
+    border: 2px solid var(--grisletras);
+
+}
+h2{
+    font-size: var(--fuentep);
+    font-size: 1.041rem;
+}
+
+.datos{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.datos h2{
+    font-size: 1.3rem;
+}
+
+.preg{
+    display: flex;
+    justify-content: center;
+}
+
+.botones{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 1rem;
+    justify-content: space-around;
+    padding-top:1rem;
+}
+
+
+.ini, .cc{
+    border-radius: 2rem;
+    width: 12rem;
+    height: 2.5rem;
+    border: 3px solid var(--grisletras);
+    background-color: var(--blanco);
+    color: var(--grisletras);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.cc{
+    border: 3px solid var(--grisletras);
+    background-color: var(--azulclaro);
+    color: var(--grisletras);
+}
+.ini:hover{
+    color: var(--blanco2);
+    cursor: pointer;
+
+}
+.cc:hover{
+    color: var(--blanco2);
+    background-color: gray;
+    cursor: pointer;
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .botones{
+        display: flex;
+        flex-direction: column; 
+    }
+     .cc, .ini{
+        width: 16rem;
+        height: 2.5rem;
+    }
+    .formulario{
+        width: 520px;
+        padding: 5rem;
+    }
+
+}
+
+
+.boton1{
+    margin-bottom: 1rem;
+}
+.recu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+}
+@media screen and (max-width: 300px) {
+    img{
+        width: 10rem;
+        height: 10rem;
+    }
+    input#txt{
+        width: 14rem;
+        height: 2.5rem;
+    }
+
+    .formulario{
+        padding: 8.3rem;
+    }
+    .recu{
+        font-size: 1rem;
+    }
+    .ini, .cc{
+        width: 14rem;
+        height: 2.5rem;
+    }
+}
+input[type=checkbox] + label {
+    display: block;
+    margin: 0.2em;
+    cursor: pointer;
+    padding: 0.2em;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox] + label:before {
+    content: "\2714";
+    border: 0.1em solid #000;
+    border-radius: 0.2em;
+    display: inline-block;
+    width: 1.2em;
+    height: 1em;
+    padding-left: 0.12em;
+    padding-bottom: 0.2em;
+    margin-right: 0.3em;
+    vertical-align: bottom;
+    color: transparent;
+    transition: .2s;
+}
+
+input[type=checkbox] + label:active:before {
+    transform: scale(0);
+}
+
+input[type=checkbox]:checked + label:before {
+    background-color: var(--grisletras);
+    border-color: var(--grisletras);
+    color: white;
+}
+
+input[type=checkbox]:disabled + label:before {
+    transform: scale(1);
+    border-color: #aaa;
+}
+
+input[type=checkbox]:checked:disabled + label:before {
+    transform: scale(1);
+    background-color: #bfb;
+    border-color: #bfb;
+}
+
+.footer{
+    display: flex;
+    width: auto;
+    height: 4rem;
+    background-color: var(--blanco);
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-footer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.Terminos{
+    text-align: center;
+}
+
+h5{
+    font-weight: normal;
+    font-size: 1rem;
+    color:var(--grisletras);
+    padding: 0 1rem;
+}
+
+@media (max-width: 769px) {
+    .contenido-footer{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+    .Terminos{
+        text-align: center;
+    }
+}
+

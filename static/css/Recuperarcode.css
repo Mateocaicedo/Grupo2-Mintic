@@ -1,0 +1,215 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #4C5658; 
+}
+
+:root{
+    --blanco:#FFFFFF;
+    --fuentep: 1.5rem;
+    --grisletras: #4C5658;
+    --azul:rgba(26,45,75,1);
+    --azulclaro: #A1D6E2;
+    --rojo: rgba(226,0,26,1); 
+    --rojo1: rgb(175, 36, 36);
+    --blanco2:rgb(211, 205, 205);
+}
+.cuerpo{
+    min-height: 20vh;
+    background-color: var(--azulclaro);
+   width: auto;
+    min-height: calc(100vh - 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.malla{
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    max-width: min-content;
+}
+
+.malla span{
+    margin-bottom: 1em;
+    text-align: justify;
+}
+
+.formulario{
+    width: 650px;
+    margin: auto;
+}
+
+.arriba{
+    max-height: 308px;
+    margin-left: auto; 
+    margin-right: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    width: 600px;
+}
+h1{
+    font-weight: bold;
+}
+
+
+select,input[type=email]{
+    border-radius: 2rem;
+    border: 2px solid var(--negro);
+    width: 28rem;
+    height: 2.8rem;
+    font-size: 1.1rem;
+    text-align: left;
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+}
+
+
+input[type=email]:hover{
+    outline: none;
+    border: 3px solid var(--grisletras);
+}
+
+.reg:hover{
+    color: var(--blanco2);
+    cursor: pointer; 
+}
+
+
+
+.nombre-ape{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 15px;
+    justify-items: center;
+}
+
+.nombre-ape h4{
+    margin-left: 1rem;
+}
+
+
+.enviar{
+    text-align: center;
+    margin-left: 1em;
+}
+
+.reg{
+    border-radius: 2rem;
+    width: 12rem;
+    height: 2.5rem;
+    border: 3px solid var(--grisletras);
+    background-color: var(--blanco);
+    color: var(--grisletras);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .formulario{
+        width: 380px;
+        padding: auto;
+        padding-top: 10px;
+    }
+
+    select,input[type=email]{
+        width: 23rem;
+    }
+
+    .nombre-ape{
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        
+    }
+    .arriba{
+        font-size: 1.5rem;
+        padding-top: 1rem;
+        position:relative;
+        width: 300px;
+        height: 15rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.1rem;
+    }
+}
+@media screen and (max-width: 576px) {
+    .formulario{
+        width: auto;
+        padding-top: 10px;
+    }
+    .arriba{
+        font-size: 1.5rem;
+        padding-top: 2vh;
+        position:relative;
+        width: auto;
+        height: 15rem;
+        
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.1rem;
+        
+    }
+    select,input[type=email]{
+        width: 15rem;
+    }
+    .malla span{
+        margin-bottom: 1em;
+        font-size: .8rem;
+    }
+}
+@media screen and (min-width: 769px) {
+    
+    .arriba{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom:1rem;
+    }
+    
+    .formulario{
+        padding-top: 0rem;
+        margin-top: 0rem;
+    }
+    
+}
+
+
+
+.footer{
+    display: flex;
+    width: auto;
+    height: 4rem;
+    background-color: var(--blanco);
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-footer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.Terminos{
+    text-align: center;
+}
+
+h5{
+    font-weight: normal;
+    font-size: 1rem;
+    color:var(--grisletras);
+    padding: 0 1rem;
+}

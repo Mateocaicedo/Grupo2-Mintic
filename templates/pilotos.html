@@ -1,0 +1,285 @@
+{% extends 'layout.html'%}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/usuarios.css') }}">
+
+{% endblock css %}
+    
+{% block body %}
+<div class="contenedorizq">
+    <div class="arriba">
+        <div id="menubt">
+            <div class="btnhamburguer"></div>
+            <div class="btnhamburguer"></div>
+            <div class="btnhamburguer"></div>
+        </div>
+        <div class="text">
+            <p>PILOTOS</p>
+        </div>
+    </div>
+
+    <div id="contenido">
+
+        <div id="contenedor-tablas">
+            <div id="arriba">
+                <div class="info">
+                    <p>INFORMACIÓN DE PILOTOS</p>
+                </div>
+                <div class="buscar">
+                    <input type="text" name="pilotos" id="pilotos" placeholder="Buscar pilotos">
+                </div>
+
+            </div>
+
+            <div id="tabla">
+                <table>
+                    <tr class="trpadre">
+                        <th>ID</th>
+                        <th>NOMBRE</th>
+                        <th>APELLDIDO</th>
+                        <th>CEDULA</th>
+                        <th>DIRECCION</th>
+                        <th>CORREO</th>
+                        <th>GENERO</th>
+                        <th>ROL</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                    <tr>
+                        <td>1014</td>
+                        <td>Barranquilla</td>
+                        <td>Bogota</td>
+                        <td>Monteria</td>
+                        <td>Ronaldo</td>
+                        <td>544878</td>
+                        <td><a href="">TXL</a></td>
+                        <td>ABORDANDO</td>
+                        <td class="iconos">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="27"
+                                    viewBox="0 0 37.074 27">
+                                    <path id="Icon_awesome-edit" data-name="Icon awesome-edit"
+                                        d="M25.913,4.39l5.806,4.758a.453.453,0,0,1,0,.728L17.662,21.395l-5.973.543A1.153,1.153,0,0,1,10.3,20.8l.663-4.895L25.025,4.39A.731.731,0,0,1,25.913,4.39ZM36.341,3.182,33.2.608a2.925,2.925,0,0,0-3.553,0L27.368,2.475a.453.453,0,0,0,0,.728l5.806,4.758a.731.731,0,0,0,.888,0l2.279-1.867a1.811,1.811,0,0,0,0-2.912ZM24.716,18.262v5.369H4.119V6.753H18.91a.889.889,0,0,0,.547-.185l2.575-2.11c.489-.4.142-1.081-.547-1.081H3.09A2.853,2.853,0,0,0,0,5.909V24.475a2.853,2.853,0,0,0,3.09,2.532H25.746a2.853,2.853,0,0,0,3.09-2.532V16.152c0-.564-.83-.844-1.319-.448l-2.575,2.11A.6.6,0,0,0,24.716,18.262Z"
+                                        transform="translate(0 -0.007)" fill="#357ff5" />
+                                </svg>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="24.726"
+                                    viewBox="0 0 21.787 24.726">
+                                    <path id="Icon_material-delete" data-name="Icon material-delete"
+                                        d="M9.056,26.478a2.956,2.956,0,0,0,3.112,2.747h12.45a2.956,2.956,0,0,0,3.112-2.747V9.995H9.056Zm20.231-20.6H23.841L22.284,4.5H14.5L12.947,5.874H7.5V8.621H29.287Z"
+                                        transform="translate(-7.5 -4.5)" fill="#e2001a" />
+                                </svg>
+
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21.234"
+                                    viewBox="0 0 31.5 21.234">
+                                    <path id="Icon_ionic-md-eye" data-name="Icon ionic-md-eye"
+                                        d="M18,7.383A16.936,16.936,0,0,0,2.25,18a16.991,16.991,0,0,0,31.5,0A16.936,16.936,0,0,0,18,7.383Zm0,17.7A7.081,7.081,0,1,1,25.158,18,7.139,7.139,0,0,1,18,25.08Zm0-11.327A4.247,4.247,0,1,0,22.3,18,4.285,4.285,0,0,0,18,13.753Z"
+                                        transform="translate(-2.25 -7.383)" fill="#04a71a" />
+                                </svg>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1014</td>
+                        <td>Barranquilla</td>
+                        <td>Bogota</td>
+                        <td>Monteria</td>
+                        <td>Ronaldo</td>
+                        <td>544878</td>
+                        <td><a href="">TXL</a></td>
+                        <td>ABORDANDO</td>
+                        <td class="iconos">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="27"
+                                    viewBox="0 0 37.074 27">
+                                    <path id="Icon_awesome-edit" data-name="Icon awesome-edit"
+                                        d="M25.913,4.39l5.806,4.758a.453.453,0,0,1,0,.728L17.662,21.395l-5.973.543A1.153,1.153,0,0,1,10.3,20.8l.663-4.895L25.025,4.39A.731.731,0,0,1,25.913,4.39ZM36.341,3.182,33.2.608a2.925,2.925,0,0,0-3.553,0L27.368,2.475a.453.453,0,0,0,0,.728l5.806,4.758a.731.731,0,0,0,.888,0l2.279-1.867a1.811,1.811,0,0,0,0-2.912ZM24.716,18.262v5.369H4.119V6.753H18.91a.889.889,0,0,0,.547-.185l2.575-2.11c.489-.4.142-1.081-.547-1.081H3.09A2.853,2.853,0,0,0,0,5.909V24.475a2.853,2.853,0,0,0,3.09,2.532H25.746a2.853,2.853,0,0,0,3.09-2.532V16.152c0-.564-.83-.844-1.319-.448l-2.575,2.11A.6.6,0,0,0,24.716,18.262Z"
+                                        transform="translate(0 -0.007)" fill="#357ff5" />
+                                </svg>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="24.726"
+                                    viewBox="0 0 21.787 24.726">
+                                    <path id="Icon_material-delete" data-name="Icon material-delete"
+                                        d="M9.056,26.478a2.956,2.956,0,0,0,3.112,2.747h12.45a2.956,2.956,0,0,0,3.112-2.747V9.995H9.056Zm20.231-20.6H23.841L22.284,4.5H14.5L12.947,5.874H7.5V8.621H29.287Z"
+                                        transform="translate(-7.5 -4.5)" fill="#e2001a" />
+                                </svg>
+
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21.234"
+                                    viewBox="0 0 31.5 21.234">
+                                    <path id="Icon_ionic-md-eye" data-name="Icon ionic-md-eye"
+                                        d="M18,7.383A16.936,16.936,0,0,0,2.25,18a16.991,16.991,0,0,0,31.5,0A16.936,16.936,0,0,0,18,7.383Zm0,17.7A7.081,7.081,0,1,1,25.158,18,7.139,7.139,0,0,1,18,25.08Zm0-11.327A4.247,4.247,0,1,0,22.3,18,4.285,4.285,0,0,0,18,13.753Z"
+                                        transform="translate(-2.25 -7.383)" fill="#04a71a" />
+                                </svg>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1014</td>
+                        <td>Barranquilla</td>
+                        <td>Bogota</td>
+                        <td>Monteria</td>
+                        <td>Ronaldo</td>
+                        <td>544878</td>
+                        <td><a href="">TXL</a></td>
+                        <td>ABORDANDO</td>
+                        <td class="iconos">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="27"
+                                    viewBox="0 0 37.074 27">
+                                    <path id="Icon_awesome-edit" data-name="Icon awesome-edit"
+                                        d="M25.913,4.39l5.806,4.758a.453.453,0,0,1,0,.728L17.662,21.395l-5.973.543A1.153,1.153,0,0,1,10.3,20.8l.663-4.895L25.025,4.39A.731.731,0,0,1,25.913,4.39ZM36.341,3.182,33.2.608a2.925,2.925,0,0,0-3.553,0L27.368,2.475a.453.453,0,0,0,0,.728l5.806,4.758a.731.731,0,0,0,.888,0l2.279-1.867a1.811,1.811,0,0,0,0-2.912ZM24.716,18.262v5.369H4.119V6.753H18.91a.889.889,0,0,0,.547-.185l2.575-2.11c.489-.4.142-1.081-.547-1.081H3.09A2.853,2.853,0,0,0,0,5.909V24.475a2.853,2.853,0,0,0,3.09,2.532H25.746a2.853,2.853,0,0,0,3.09-2.532V16.152c0-.564-.83-.844-1.319-.448l-2.575,2.11A.6.6,0,0,0,24.716,18.262Z"
+                                        transform="translate(0 -0.007)" fill="#357ff5" />
+                                </svg>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="24.726"
+                                    viewBox="0 0 21.787 24.726">
+                                    <path id="Icon_material-delete" data-name="Icon material-delete"
+                                        d="M9.056,26.478a2.956,2.956,0,0,0,3.112,2.747h12.45a2.956,2.956,0,0,0,3.112-2.747V9.995H9.056Zm20.231-20.6H23.841L22.284,4.5H14.5L12.947,5.874H7.5V8.621H29.287Z"
+                                        transform="translate(-7.5 -4.5)" fill="#e2001a" />
+                                </svg>
+
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21.234"
+                                    viewBox="0 0 31.5 21.234">
+                                    <path id="Icon_ionic-md-eye" data-name="Icon ionic-md-eye"
+                                        d="M18,7.383A16.936,16.936,0,0,0,2.25,18a16.991,16.991,0,0,0,31.5,0A16.936,16.936,0,0,0,18,7.383Zm0,17.7A7.081,7.081,0,1,1,25.158,18,7.139,7.139,0,0,1,18,25.08Zm0-11.327A4.247,4.247,0,1,0,22.3,18,4.285,4.285,0,0,0,18,13.753Z"
+                                        transform="translate(-2.25 -7.383)" fill="#04a71a" />
+                                </svg>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1014</td>
+                        <td>Barranquilla</td>
+                        <td>Bogota</td>
+                        <td>Monteria</td>
+                        <td>Ronaldo</td>
+                        <td>544878</td>
+                        <td><a href="">TXL</a></td>
+                        <td>ABORDANDO</td>
+                        <td class="iconos">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="27"
+                                    viewBox="0 0 37.074 27">
+                                    <path id="Icon_awesome-edit" data-name="Icon awesome-edit"
+                                        d="M25.913,4.39l5.806,4.758a.453.453,0,0,1,0,.728L17.662,21.395l-5.973.543A1.153,1.153,0,0,1,10.3,20.8l.663-4.895L25.025,4.39A.731.731,0,0,1,25.913,4.39ZM36.341,3.182,33.2.608a2.925,2.925,0,0,0-3.553,0L27.368,2.475a.453.453,0,0,0,0,.728l5.806,4.758a.731.731,0,0,0,.888,0l2.279-1.867a1.811,1.811,0,0,0,0-2.912ZM24.716,18.262v5.369H4.119V6.753H18.91a.889.889,0,0,0,.547-.185l2.575-2.11c.489-.4.142-1.081-.547-1.081H3.09A2.853,2.853,0,0,0,0,5.909V24.475a2.853,2.853,0,0,0,3.09,2.532H25.746a2.853,2.853,0,0,0,3.09-2.532V16.152c0-.564-.83-.844-1.319-.448l-2.575,2.11A.6.6,0,0,0,24.716,18.262Z"
+                                        transform="translate(0 -0.007)" fill="#357ff5" />
+                                </svg>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="24.726"
+                                    viewBox="0 0 21.787 24.726">
+                                    <path id="Icon_material-delete" data-name="Icon material-delete"
+                                        d="M9.056,26.478a2.956,2.956,0,0,0,3.112,2.747h12.45a2.956,2.956,0,0,0,3.112-2.747V9.995H9.056Zm20.231-20.6H23.841L22.284,4.5H14.5L12.947,5.874H7.5V8.621H29.287Z"
+                                        transform="translate(-7.5 -4.5)" fill="#e2001a" />
+                                </svg>
+
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21.234"
+                                    viewBox="0 0 31.5 21.234">
+                                    <path id="Icon_ionic-md-eye" data-name="Icon ionic-md-eye"
+                                        d="M18,7.383A16.936,16.936,0,0,0,2.25,18a16.991,16.991,0,0,0,31.5,0A16.936,16.936,0,0,0,18,7.383Zm0,17.7A7.081,7.081,0,1,1,25.158,18,7.139,7.139,0,0,1,18,25.08Zm0-11.327A4.247,4.247,0,1,0,22.3,18,4.285,4.285,0,0,0,18,13.753Z"
+                                        transform="translate(-2.25 -7.383)" fill="#04a71a" />
+                                </svg>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1014</td>
+                        <td>Barranquilla</td>
+                        <td>Bogota</td>
+                        <td>Monteria</td>
+                        <td>Ronaldo</td>
+                        <td>544878</td>
+                        <td><a href="">TXL</a></td>
+                        <td>ABORDANDO</td>
+                        <td class="iconos">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="27"
+                                    viewBox="0 0 37.074 27">
+                                    <path id="Icon_awesome-edit" data-name="Icon awesome-edit"
+                                        d="M25.913,4.39l5.806,4.758a.453.453,0,0,1,0,.728L17.662,21.395l-5.973.543A1.153,1.153,0,0,1,10.3,20.8l.663-4.895L25.025,4.39A.731.731,0,0,1,25.913,4.39ZM36.341,3.182,33.2.608a2.925,2.925,0,0,0-3.553,0L27.368,2.475a.453.453,0,0,0,0,.728l5.806,4.758a.731.731,0,0,0,.888,0l2.279-1.867a1.811,1.811,0,0,0,0-2.912ZM24.716,18.262v5.369H4.119V6.753H18.91a.889.889,0,0,0,.547-.185l2.575-2.11c.489-.4.142-1.081-.547-1.081H3.09A2.853,2.853,0,0,0,0,5.909V24.475a2.853,2.853,0,0,0,3.09,2.532H25.746a2.853,2.853,0,0,0,3.09-2.532V16.152c0-.564-.83-.844-1.319-.448l-2.575,2.11A.6.6,0,0,0,24.716,18.262Z"
+                                        transform="translate(0 -0.007)" fill="#357ff5" />
+                                </svg>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="24.726"
+                                    viewBox="0 0 21.787 24.726">
+                                    <path id="Icon_material-delete" data-name="Icon material-delete"
+                                        d="M9.056,26.478a2.956,2.956,0,0,0,3.112,2.747h12.45a2.956,2.956,0,0,0,3.112-2.747V9.995H9.056Zm20.231-20.6H23.841L22.284,4.5H14.5L12.947,5.874H7.5V8.621H29.287Z"
+                                        transform="translate(-7.5 -4.5)" fill="#e2001a" />
+                                </svg>
+
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21.234"
+                                    viewBox="0 0 31.5 21.234">
+                                    <path id="Icon_ionic-md-eye" data-name="Icon ionic-md-eye"
+                                        d="M18,7.383A16.936,16.936,0,0,0,2.25,18a16.991,16.991,0,0,0,31.5,0A16.936,16.936,0,0,0,18,7.383Zm0,17.7A7.081,7.081,0,1,1,25.158,18,7.139,7.139,0,0,1,18,25.08Zm0-11.327A4.247,4.247,0,1,0,22.3,18,4.285,4.285,0,0,0,18,13.753Z"
+                                        transform="translate(-2.25 -7.383)" fill="#04a71a" />
+                                </svg>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1014</td>
+                        <td>Barranquilla</td>
+                        <td>Bogota</td>
+                        <td>Monteria</td>
+                        <td>Ronaldo</td>
+                        <td>544878</td>
+                        <td><a href="">TXL</a></td>
+                        <td>ABORDANDO</td>
+                        <td class="iconos">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="27"
+                                    viewBox="0 0 37.074 27">
+                                    <path id="Icon_awesome-edit" data-name="Icon awesome-edit"
+                                        d="M25.913,4.39l5.806,4.758a.453.453,0,0,1,0,.728L17.662,21.395l-5.973.543A1.153,1.153,0,0,1,10.3,20.8l.663-4.895L25.025,4.39A.731.731,0,0,1,25.913,4.39ZM36.341,3.182,33.2.608a2.925,2.925,0,0,0-3.553,0L27.368,2.475a.453.453,0,0,0,0,.728l5.806,4.758a.731.731,0,0,0,.888,0l2.279-1.867a1.811,1.811,0,0,0,0-2.912ZM24.716,18.262v5.369H4.119V6.753H18.91a.889.889,0,0,0,.547-.185l2.575-2.11c.489-.4.142-1.081-.547-1.081H3.09A2.853,2.853,0,0,0,0,5.909V24.475a2.853,2.853,0,0,0,3.09,2.532H25.746a2.853,2.853,0,0,0,3.09-2.532V16.152c0-.564-.83-.844-1.319-.448l-2.575,2.11A.6.6,0,0,0,24.716,18.262Z"
+                                        transform="translate(0 -0.007)" fill="#357ff5" />
+                                </svg>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="24.726"
+                                    viewBox="0 0 21.787 24.726">
+                                    <path id="Icon_material-delete" data-name="Icon material-delete"
+                                        d="M9.056,26.478a2.956,2.956,0,0,0,3.112,2.747h12.45a2.956,2.956,0,0,0,3.112-2.747V9.995H9.056Zm20.231-20.6H23.841L22.284,4.5H14.5L12.947,5.874H7.5V8.621H29.287Z"
+                                        transform="translate(-7.5 -4.5)" fill="#e2001a" />
+                                </svg>
+
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21.234"
+                                    viewBox="0 0 31.5 21.234">
+                                    <path id="Icon_ionic-md-eye" data-name="Icon ionic-md-eye"
+                                        d="M18,7.383A16.936,16.936,0,0,0,2.25,18a16.991,16.991,0,0,0,31.5,0A16.936,16.936,0,0,0,18,7.383Zm0,17.7A7.081,7.081,0,1,1,25.158,18,7.139,7.139,0,0,1,18,25.08Zm0-11.327A4.247,4.247,0,1,0,22.3,18,4.285,4.285,0,0,0,18,13.753Z"
+                                        transform="translate(-2.25 -7.383)" fill="#04a71a" />
+                                </svg>
+
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="btn-bueno">
+                <button id="boton-nuevo" type="button"
+                    onclick="confirm('Quieres agregar un nuevo vuelo?')">Nuevo</button>
+            </div>
+        </div>
+    </div>
+
+    {% endblock body %}
