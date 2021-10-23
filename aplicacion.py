@@ -140,13 +140,14 @@ def NewContra():
         else:
             if contraseña == confirmacontra:
                 nueva = contraseña
+                contrahash = generate_password_hash(nueva)
                 try:
                     with sqlite3.connect('reto.db') as con:
                             cur = con.cursor()
                             cur.execute("select * from usuarios where cedula=?",[usuario])
                             dime = cur.fetchone()
                             if dime!= None:
-                                cur.execute("update usuarios set contraseña =? where cedula=?", [nueva,dime[8]])
+                                cur.execute("update usuarios set contraseña =? where cedula=?", [contrahash,dime[8]])
                                 con.commit()
                                 print("dime si",[dime[8]])
                                 flash('Contraseña restablecida con exito')
