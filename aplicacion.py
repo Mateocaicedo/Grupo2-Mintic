@@ -632,9 +632,20 @@ def adminsusuarioseliminar(id):
             try:
                 with sqlite3.connect('reto.db') as con:
                     cur = con.cursor()
-                    cur.execute("delete from usuarios where id_usuarios =?", [ id])
-                    con.commit()
-                    flash('Usuario eliminado con exito')
+                    cur.execute("select cedula from usuarios where cedula=?",[session["cedula"]])
+                    dime = cur.fetchone()
+
+                    cur.execute("select cedula from usuarios where id_usuarios=?",[id])
+                    dimet = cur.fetchone()
+                    
+                    print(dime[0], session["cedula"], dimet[0])
+                    if dime[0] == dimet[0]:
+                        flash('No puedes eliminar este usuario')
+                        return redirect("/usuarios")
+                    else:
+                        cur.execute("delete from usuarios where id_usuarios =?", [ id])
+                        con.commit()
+                        flash('Usuario eliminado con exito')
             except Error as er:
                 flash("Ocurrio un error")
                 print('SQLite error: %s' % (' '.join(er.args)))
