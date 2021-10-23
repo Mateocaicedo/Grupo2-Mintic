@@ -1,0 +1,178 @@
+{% extends 'layout.html'%}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/usuarios.css') }}">
+
+{% endblock css %}
+
+{% block body %}
+<div class="contenedorizq">
+    <div class="arriba">
+        <div id="menubt">
+            <div class="btnhamburguer"></div>
+            <div class="btnhamburguer"></div>
+            <div class="btnhamburguer"></div>
+        </div>
+        <div class="text">
+            <p>USUARIOS</p>
+        </div>
+    </div>
+
+    <div id="contenido">
+
+        <div id="contenedor-tablas">
+            <div id="arriba">
+                <div class="info">
+                    <p>INFORMACIÓN DE USUARIOS</p>
+                </div>
+            </div>
+
+            <div>
+                <table id="tabla" tyle="width:100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NOMBRE</th>
+                            <th>APELLIDO</th>
+                            <th>DIRECCION</th>
+                            <th>CORREO</th>
+                            <th>GENERO</th>
+                            <th>FECHA</th>
+                            <th>CEDULA</th>
+                            <th>ROL</th>
+                            <th>ACCIONES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for r in usuarios %}
+                        <tr>
+                            <td>{{r["id_usuarios"]}}</td>
+                            <td>{{r[4]}}</td>
+                            <td>{{r["apellido"]}}</td>
+                            <td>{{r["direccion"]}}</td>
+                            <td>{{r["correo"]}}</td>
+                            <td>{{r["genero"]}}</td>
+                            <td>{{r["fecha_nacimiento"]}}</td>
+                            <td>{{r["cedula"]}}</td>
+                            <td>{{r["nombre"]}}</td>
+                            <td class="iconos">
+                                <div>
+                                    <a class="editar fas fa-edit" type="button" onmousedown="MostrarEdit()" <i></i></a>
+
+                                </div>
+                                
+
+                            </td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>NOMBRE</th>
+                            <th>APELLIDO</th>
+                            <th>DIRECCION</th>
+                            <th>CORREO</th>
+                            <th>GENERO</th>
+                            <th>FECHA</th>
+                            <th>CEDULA</th>
+                            <th>ROL</th>
+                            <th>ACCIONES</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+
+        </div>
+
+        <div id="contenedor-editar" class="contenedor-editar">
+            <div class="contenido-editar">
+                <div class="contenedor1">
+                    <p>Editar datos de usuarios</p>
+                    <form method="POST" class="formulario">
+                        <div class="nombre-ape">
+                            <div class="card-columns">
+                                <div>
+                                    <span>Nombre</span>
+                                    <input type="text" value="{{unusuarios[4]}}" name="nombre" placeholder="Nombre">
+                                </div>
+
+                                <div>
+                                    <span>Apellido</span>
+                                    <input type="text" value="{{unusuarios['apellido']}}" name="apellido"
+                                        placeholder="Apellido">
+                                </div>
+
+                            </div>
+                            <div class="card-columns">
+                                <div>
+                                    <span>
+                                        Direccion
+                                    </span>
+                                    <input type="text" value="{{unusuarios['direccion']}}" name="Direccion"
+                                        placeholder="Direccion">
+                                </div>
+                                <div><span>Correo</span>
+
+                                    <input type="text" value="{{unusuarios['correo']}}" name="Correo"
+                                        placeholder="Correo">
+                                </div>
+
+
+
+                            </div>
+                            <div class="card-columns">
+                                <div><span>Contraseña</span>
+                                    <input type="password" value="{{unusuarios['contraseña']}}" name="contraseña"
+                                    placeholder="contraseña">
+                                </div>
+                                <div><span>Confirmar contraseña</span>
+                                    <input type="password" value="{{unusuarios['contraseña']}}" name="confirmcontra"
+                                    placeholder="confirmcontra">
+                                </div>
+                            </div>
+
+                            <div class="card-columns">
+                                <div><span>Fecha de nacimiento</span>
+                                    <input type="text" readonly onmousedown="return false;" value="{{unusuarios['fecha_nacimiento']}}" name="fecha"
+                                    placeholder="Fecha de nacimiento">
+                                </div>
+                                <div><span>Cedula</span>
+                                    <input type="number" readonly onmousedown="return false;" value="{{unusuarios['cedula']}}" name="Cedula"
+                                    placeholder="Cedula">
+                                </div>
+                                
+                                
+
+                            </div>
+
+
+                            <div class="card-columns">
+                                <div><span>Genero</span>
+                                    <input  type="text" readonly onmousedown="return false;" value="{{unusuarios['genero']}}" name="genero" placeholder="Genero"></div>
+                                <div><span>Rol</span>
+                                    <select name="rol">
+                                        {% for r in rol %}
+                                        <option value="{{r['id_rol']}}">{{r["nombre"]}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                
+                                
+                            </div>
+
+                            <div class="enviar">
+                                <button id="boton-nuevoedit" type="submit">Editar</button>
+                                <button id="boton-cancelarnuevo" onmousedown="retirar()" type="button">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+{% endblock body %}

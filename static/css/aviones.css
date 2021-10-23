@@ -1,24 +1,29 @@
 /* CSS aviones */
 #contenedor-tablas-aviones{
-    margin: auto;
-    margin-top: 5REM;
-    width: 40rem;
-    height: 30rem;
+    margin: 4rem;
+    width: auto;
+}
+.fas.fa-trash{
+    color: #D65252;
+}
+.fas.fa-edit{
+    color: cornflowerblue;
+}
+
+.fas.fa-external-link-square-alt{
+    color: #25AB5B;
 }
 
 #contenidoaviones{
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 #arriba-aviones{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
+    text-align: left;
     padding: 1rem;
     
 }
-#boton-nuevo{
+#boton-nuevo, #boton-nuevoedit, #boton-nuevodelete {
     width: 100px;
     height: 2rem;
     border-radius: 2rem;
@@ -28,11 +33,20 @@
     font-weight: bold;
 
 }
+#boton-cancelaredit, #boton-cancelardelete, #boton-eliminar, #boton-cancelarnuevo{
+    width: 100px;
+    height: 2rem;
+    border-radius: 2rem;
+    background-color: #D65252;
+    color: var(--blanco);
+    cursor: pointer;
+    font-weight: bold;
 
+}
 .buscaraviones{
     text-align: right;
 }
-input[type=text]{
+input[type=text], input[type=number]{
     width: 14rem;
     height: 2rem;
     border-radius: 2rem;
@@ -44,10 +58,13 @@ input[type=text]{
 input[type=text]:focus{
     outline: none;
 }
-#boton-nuevo:hover{
+#boton-nuevo:hover,#boton-nuevoedit:hover, #boton-nuevodelete:hover{
     background-color: #468B62;
 }
-#tablaaviones{
+#boton-cancelaredit:hover, #boton-cancelardelete:hover, #boton-cancelarnuevo:hover{
+    background-color: #a74f4f;
+}
+/* #tablaaviones{
     width: 43rem;
     height: 30rem;
     margin-bottom: 1rem;
@@ -66,14 +83,7 @@ input[type=text]:focus{
     border-collapse: collapse;
     
 }
-#tablaaviones table tr{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    align-items: center;
-    padding: 10px;
-   
-    
-}
+
 #tablaaviones table .trpadreavion{
     background-color: var(--azulclaro);
     border-top-left-radius: 2rem;
@@ -81,16 +91,131 @@ input[type=text]:focus{
     height: 4rem;
     
 }
-tr:nth-child(even){
-background-color: #ddd;
-}
-
-#tablaaviones table td{
-    text-align: center;
+ tr:nth-child(even){
+    background-color: #ddd;
+    }
+    
+    #tablaaviones table td{
+        text-align: center;
+    }
+ */
+td{
+  text-align: center; 
+    
 }
 .iconosaviones{
     display: flex;
     gap: 10px;
     align-items: center;
-    padding-left: 25px;
+    justify-content: center;
 }
+a{
+    cursor: pointer;
+}
+.contenedor-nuevo{
+    display: flex;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    pointer-events: none;
+    opacity:0 ;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    transition-duration: 00.35s;
+}
+
+
+.contenido-nuevo{
+    width: 30rem;
+    height: 21rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #F2F2F2;
+    border-radius: 20px;
+}
+
+
+
+.contenedor-editar{
+    display: flex;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    pointer-events: none;
+    opacity:0 ;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    transition-duration: 00.35s;
+}
+
+
+.contenido-editar{
+    width: 30rem;
+    height: 18rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #F2F2F2;
+    border-radius: 20px;
+}
+
+.contenedor1, .contenedor2, .contenedor3{
+    margin: auto;
+}
+#contenedor-editar p{
+    font-size: 2rem;
+    
+}
+.showeditar{
+    pointer-events: auto;
+    opacity: 1;
+}
+.formulario{
+    margin-top: 20px;
+}
+
+.nombre-ape{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.enviar{
+    text-align: center;
+}
+
+
+.contenedor-eliminar{
+    display: flex;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    pointer-events: none;
+    opacity:0 ;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    transition-duration: 00.35s;
+}
+
+.contenido-eliminar{
+    width: 20rem;
+    height: 10rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #F2F2F2;
+    border-radius: 20px;
+}
+
+.showeliminar{
+    pointer-events: auto;
+    opacity: 1;
+}
+

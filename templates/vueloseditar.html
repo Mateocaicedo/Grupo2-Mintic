@@ -1,0 +1,176 @@
+{% extends 'layout.html'%}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/vuelos.css') }}">
+
+{% endblock css %}
+
+{% block body %}
+<div class="contenedorizq">
+    <div class="arriba">
+        <div id="menubt">
+            <div class="btnhamburguer"></div>
+            <div class="btnhamburguer"></div>
+            <div class="btnhamburguer"></div>
+        </div>
+        <div class="text">
+            <p>VUELOS</p>
+        </div>
+    </div>
+
+    <div id="contenido">
+
+        <div id="contenedor-tablas">
+            <div id="arriba">
+                <div class="info">
+                    <p>INFORMACIÓN DE VUELOS</p>
+                </div>
+
+
+            </div>
+
+            <div >
+                <table id="tabla" tyle="width:100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>ORIGEN</th>
+                            <th>DESTINO</th>
+                            <th>ESCALA</th>
+                            <th>PILOTO</th>
+                            <th>CAPACIDAD</th>
+                            <th>AVION</th>
+                            <th>ESTADO</th>
+                            <th>PRECIO</th>
+                            <th>ACCIONES</th>
+                        </tr>
+                    </thead>
+                   
+                    <tbody>
+                        {% for r in vuel%}
+                        <tr>
+                            <td>{{r["ID"]}}</td>
+                            <td>{{r["origen"]}}</td>
+                            <td>{{r["destino"]}}</td>
+                            <td>{{r["escala"]}}</td>
+                            <td>{{r["nombre"]}}</td>
+                            <td>{{r["cupos"]}}</td>
+                            <td>{{r["marca"]}}</td>
+                            <td>{{r["estado"]}}</td>
+                            <td>{{r["precio"]}}</td>
+                            <td class="iconos">
+                                <div>
+                                    <a class="editar fas fa-edit" type="button" onmousedown="MostrarEdit()" <i></i></a>
+                                </div>
+                               
+                            </td>
+                        </tr>
+                        {% endfor%}
+                    </tbody>
+                    
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>ORIGEN</th>
+                            <th>DESTINO</th>
+                            <th>ESCALA</th>
+                            <th>PILOTO</th>
+                            <th>CAPACIDAD</th>
+                            <th>AVION</th>
+                            <th>ESTADO</th>
+                            <th>PRECIO</th>
+                            <th>ACCIONES</th>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </div>
+
+
+        </div>
+        <div id="contenedor-editar" class="contenedor-editar">
+            <div class="contenido-editar">
+                <div class="contenedor1">
+                    <p>Editar datos del vuelo</p>
+                    <form method="POST" class="formulario">
+                        <div class="nombre-ape">
+                            <div class="card-columns">
+                                <div>
+                                    <span>Origen</span>
+                                    <input type="text" value="{{unvuel['origen']}}" name="origen" placeholder="Origen">
+                                </div>
+                                <div>
+                                    <span>Destino</span>
+                                    <input type="text" value="{{unvuel['destino']}}" name="destino"
+                                        placeholder="Destino">
+
+                                </div>
+                            </div>
+                            <div class="card-columns">
+                                <div>
+                                    <span>Escala</span>
+                                    <input type="text" value="{{unvuel['escala']}}" name="escala" placeholder="Escala">
+                                </div>
+                                <div>
+                                    <span>Piloto</span>
+                                    <select name="Piloto">
+                                        {% for r in piloto %}
+                                        <option value="{{r['id_usuarios']}}">{{r["nombre"]}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                
+                            </div>
+                            <div class="card-columns">
+                                <div>
+                                    <span>Cupos</span>
+                                    <input type="number" value="{{unvuel['cupos']}}" name="cupos" placeholder="Cupos">
+                                </div>
+                                
+                                <div>
+                                    <span>Avion</span>
+                                    <select name="avion">
+                                        {% for r in av %}
+                                        <option value="{{r['id_avion']}}">{{r["marca"]}}</option>
+                                        {% endfor %}
+    
+                                    </select>
+                                </div>
+                                
+
+
+                            </div>
+                            <div class="card-columns">
+                                <div>
+                                    <span>Estado</span>
+                                    <input type="text" value="{{unvuel['estado']}}" name="Estado" placeholder="Estado">
+                                </div>
+                                
+                                <div>
+                                    <span>Precio</span>
+                                    <input type="number" value="{{unvuel['precio']}}" name="precio" placeholder="Precio">
+                                </div>
+                                
+
+                            </div>
+
+
+
+
+                            <div class="enviar">
+                                <button id="boton-nuevoedit" type="submit">Editar</button>
+                                <button id="boton-cancelaredit" onmousedown="retirar()"" type="
+                                    button">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+{% endblock body %}

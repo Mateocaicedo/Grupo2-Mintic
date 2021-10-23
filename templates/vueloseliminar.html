@@ -1,0 +1,109 @@
+{% extends 'layout.html'%}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/vuelos.css') }}">
+
+{% endblock css %}
+
+{% block body %}
+<div class="contenedorizq">
+    <div class="arriba">
+        <div id="menubt">
+            <div class="btnhamburguer"></div>
+            <div class="btnhamburguer"></div>
+            <div class="btnhamburguer"></div>
+        </div>
+        <div class="text">
+            <p>VUELOS</p>
+        </div>
+    </div>
+
+    <div id="contenido">
+
+        <div id="contenedor-tablas">
+            <div id="arriba">
+                <div class="info">
+                    <p>INFORMACIÓN DE VUELOS</p>
+                </div>
+
+
+            </div>
+
+           <div >
+                <table id="tabla" tyle="width:100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>ORIGEN</th>
+                            <th>DESTINO</th>
+                            <th>ESCALA</th>
+                            <th>PILOTO</th>
+                            <th>CAPACIDAD</th>
+                            <th>AVION</th>
+                            <th>ESTADO</th>
+                            <th>PRECIO</th>
+                            <th>ACCIONES</th>
+                        </tr>
+                    </thead>
+                   
+                    <tbody>
+                        {% for r in vuel%}
+                        <tr>
+                            <td>{{r["ID"]}}</td>
+                            <td>{{r["origen"]}}</td>
+                            <td>{{r["destino"]}}</td>
+                            <td>{{r["escala"]}}</td>
+                            <td>{{r["nombre"]}}</td>
+                            <td>{{r["cupos"]}}</td>
+                            <td>{{r["marca"]}}</td>
+                            <td>{{r["estado"]}}</td>
+                            <td>{{r["precio"]}}</td>
+                            <td class="iconos">
+                                <div>
+                                    <a  class="eliminar fas fa-trash" onmousedown="Eliminar()"<i"></i></a>
+                                </div>
+                               
+                            </td>
+                        </tr>
+                        {% endfor%}
+                    </tbody>
+                    
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>ORIGEN</th>
+                            <th>DESTINO</th>
+                            <th>ESCALA</th>
+                            <th>PILOTO</th>
+                            <th>CAPACIDAD</th>
+                            <th>AVION</th>
+                            <th>ESTADO</th>
+                            <th>PRECIO</th>
+                            <th>ACCIONES</th>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </div>
+
+        </div>
+        <div id="contenedor-eliminar" class="contenedor-eliminar">
+            <div class="contenido-eliminar">
+                <div class="contenedor2">
+                    <p>Desea eliminar el vuelo?</p>
+                    <form method="POST" class="formulario">
+                        <div class="enviar">
+                            <button id="boton-nuevodelete" type="submit">Eliminar</button>
+                            <button id="boton-cancelardelete" type="button">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+
+
+</div>
+{% endblock body %}

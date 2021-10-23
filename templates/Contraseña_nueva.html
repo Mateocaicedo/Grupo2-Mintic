@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/nuevacontra.css" type="text/css">
-    <link rel="stylesheet" href="static/css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nuevacontra.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -14,9 +14,21 @@
 </head>
 
 <body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="alert">
+        <div>
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+    {% endif %}
+    {% endwith %}
     <div class="cuerpo">
         <form class="formulario" action="" method="POST">
-            <a href="">
+            <a href="Login.html">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="366" height="226" viewBox="0 0 366 226">
                     <defs>
                       <pattern id="pattern" width="1" height="1" viewBox="19.696 44.381 177.608 139.14">
@@ -33,18 +45,19 @@
             </a>
             <!-- esta parte son los input de usuario y contraseña -->
             <div class="txto">
-                <h2>Digita una nueva contraseña</h2>
+                <h2>RESTABLECER CUENTA</h2>
             </div>
             <div class="datos">
-                <input class="control" id="txt" type="password" placeholder="Contraseña nueva" >
-                <input class="control" id="txt" type="password" placeholder="Confirma contraseña">
+                <input class="control" name="usuario" id="txt" type="number" placeholder="Usuario - Cedula" >
+                <input class="control" name="contra" id="txt" type="password" placeholder="Contraseña nueva" >
+                <input class="control" name="confirmcontra" id="txt" type="password" placeholder="Confirma contraseña">
             </div>
 
             
 
             <div class="botones">
                 <div class="boton2">
-                    <input class="cc" type="button" value="Aceptar" OnClick="location.href='Login.html'" >
+                    <input class="cc" type="submit" value="Aceptar" >
                 </div>
                 <!-- <a href="Registro.html"><button class="cc">Crear cuenta</button></a> -->
             </div>

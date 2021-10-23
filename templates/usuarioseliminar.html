@@ -1,7 +1,7 @@
 {% extends 'layout.html'%}
 
 {% block css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/pilotos.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/usuarios.css') }}">
 
 {% endblock css %}
 
@@ -14,7 +14,7 @@
             <div class="btnhamburguer"></div>
         </div>
         <div class="text">
-            <p>PILOTOS</p>
+            <p>USUARIOS</p>
         </div>
     </div>
 
@@ -23,50 +23,44 @@
         <div id="contenedor-tablas">
             <div id="arriba">
                 <div class="info">
-                    <p>INFORMACIÓN DE PILOTOS</p>
+                    <p>INFORMACIÓN DE USUARIOS</p>
                 </div>
-
             </div>
-
             <div>
                 <table id="tabla" tyle="width:100%">
                     <thead>
-
-
                         <tr>
-
                             <th>ID</th>
                             <th>NOMBRE</th>
                             <th>APELLIDO</th>
-                            <th>CEDULA</th>
                             <th>DIRECCION</th>
                             <th>CORREO</th>
                             <th>GENERO</th>
-                            <th>FECHA NACIMIENTO</th>
+                            <th>FECHA</th>
+                            <th>CEDULA</th>
+                            <th>ROL</th>
                             <th>ACCIONES</th>
                         </tr>
                     </thead>
                     <tbody>
-
-
-                        {%for r in usuarios%}
+                        {% for r in usuarios %}
                         <tr>
                             <td>{{r["id_usuarios"]}}</td>
-                            <td>{{r["nombre"]}}</td>
+                            <td>{{r[4]}}</td>
                             <td>{{r["apellido"]}}</td>
-                            <td>{{r["cedula"]}}</td>
                             <td>{{r["direccion"]}}</td>
                             <td>{{r["correo"]}}</td>
                             <td>{{r["genero"]}}</td>
                             <td>{{r["fecha_nacimiento"]}}</td>
+                            <td>{{r["cedula"]}}</td>
+                            <td>{{r["nombre"]}}</td>
                             <td class="iconos">
-
-
                                 <div>
-                                    <a href="{{url_for('vuelosasig',id=r['id_usuarios'])}}"
-                                        class="ver fas fa-eye" "<i"></i></a>
-                                    </a>
+                                    <a  class="eliminar fas fa-trash" onmousedown="Eliminar()"<i"></i></a>
+
                                 </div>
+                                
+
                             </td>
                         </tr>
                         {%endfor%}
@@ -76,22 +70,33 @@
                             <th>ID</th>
                             <th>NOMBRE</th>
                             <th>APELLIDO</th>
-                            <th>CEDULA</th>
                             <th>DIRECCION</th>
                             <th>CORREO</th>
                             <th>GENERO</th>
-                            <th>FECHA NACIMIENTO</th>
+                            <th>FECHA</th>
+                            <th>CEDULA</th>
+                            <th>ROL</th>
                             <th>ACCIONES</th>
                         </tr>
                     </tfoot>
                 </table>
             </div>
 
-
         </div>
 
-
-
+        <div id="contenedor-eliminar" class="contenedor-eliminar">
+            <div class="contenido-eliminar">
+                <div class="contenedor2">
+                    <p>Desea eliminar el vuelo?</p>
+                    <form method="POST" class="formulario">
+                        <div class="enviar">
+                            <button id="boton-nuevodelete" type="submit">Eliminar</button>
+                            <button id="boton-cancelardelete" type="button">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
 
     </div>

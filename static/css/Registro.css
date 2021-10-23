@@ -17,6 +17,54 @@
     --blanco2:rgb(211, 205, 205);
 }
 
+.alert {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f44336; /* Red */
+    margin-bottom: 15px;
+    width: 40vw;
+    min-width: 220px;
+    position: absolute;
+    top: 0px;
+    /* top: 50%; */
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    z-index: 12;
+    min-height: 80px;
+}
+
+.alert div {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.alert div  p {
+    color: white;
+    text-align: center;
+}
+
+/* The close button */
+.closebtn {
+    margin-left: 6px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+}
+
+
 .cuerpo{
     min-height: 20vh;
     background-color: var(--azulclaro);
@@ -67,6 +115,15 @@ select,input[type=text],input[type=password],input[type=email], input[type=date]
     padding-right: 1.1rem;
 }
 
+#dire{
+    width: 39rem;
+}
+
+.dire{
+    padding: 0.5rem;
+    padding-top: 1rem;
+    text-align: center;
+}
 
 input[type=text]:hover,input[type=password]:hover,input[type=email]:hover, input[type=date]:hover, input[type=number]:hover, select:hover{
     outline: none;
@@ -143,6 +200,9 @@ input[type=number] { -moz-appearance:textfield; }
         align-items: center;
         font-size: 1.1rem;
     }
+    #dire{
+        width: 19rem;
+    }
 }
 @media screen and (max-width: 576px) {
     .formulario{
@@ -163,6 +223,7 @@ input[type=number] { -moz-appearance:textfield; }
         align-items: center;
         font-size: 1.1rem;
     }
+    
 }
 @media screen and (min-width: 769px) {
     
@@ -177,6 +238,7 @@ input[type=number] { -moz-appearance:textfield; }
         padding-top: 0rem;
         margin-top: 0rem;
     }
+    
 }
 
 @media screen and (max-width: 380px) {
@@ -190,6 +252,11 @@ input[type=number] { -moz-appearance:textfield; }
         height: 2.8rem;
         font-size: 1.1rem;
     }
+
+    #dire{
+        width: 14rem;
+    }
+   
 }
 
 .footer{

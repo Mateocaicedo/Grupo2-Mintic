@@ -5,19 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/dashboard.css" type="text/css">
-    <link rel="stylesheet" href="static/css/normalize.css" type="text/css">
+    
     {% block css %}
 
     {% endblock %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
     <title>Administrador</title>
 </head>
 
 <!-- <body onresize="FuntionResize()"> -->
 <body >
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert">
+            <div>
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        </div>
+        {% endif %}
+    {% endwith %}
     <div class="cuerpo">
         <div id="contenedorderecha" class="expanded">
 
@@ -48,7 +62,7 @@
                 </svg>
             </div>
             <div class="textosuno">
-                <a href="administrador">
+                <a href="/administrador">
                     <p>SUPERADMINISTRADOR</p>
                 </a>
             </div>
@@ -58,7 +72,7 @@
                         d="M26.787,17.71c.29.081.527-.068.527-.333V15.7a.924.924,0,0,0-.476-.728L16.709,9.726A.923.923,0,0,1,16.233,9V3.126a2.63,2.63,0,0,0-.207-.928S15.421.9,14.364.75a2.267,2.267,0,0,0-.343-.03h-.006a2.345,2.345,0,0,0-.4.035L13.5.778l-.182.049a2.527,2.527,0,0,0-1.333,1.364,2.961,2.961,0,0,0-.185.935V9a.924.924,0,0,1-.476.728L1.2,14.968A.924.924,0,0,0,.72,15.7v1.681c0,.265.237.414.527.332l10.027-2.827c.29-.081.527.068.527.333V19.8a1.046,1.046,0,0,1-.443.77l-1.33.867a1.046,1.046,0,0,0-.443.77v1.124a.387.387,0,0,0,.532.348l3.366-.84a2.611,2.611,0,0,1,1.065,0l3.369.84a.387.387,0,0,0,.532-.348V22.21a1.046,1.046,0,0,0-.443-.77l-1.33-.867a1.048,1.048,0,0,1-.443-.77V15.215c0-.265.237-.414.527-.332L26.787,17.71Z"
                         transform="translate(-0.72 -0.72)" fill="#4c5658" />
                 </svg>
-                <a href="aviones">
+                <a href="/aviones">
                     <p>
                         AVIONES</p>
                 </a>
@@ -69,7 +83,7 @@
                         d="M26.787,17.71c.29.081.527-.068.527-.333V15.7a.924.924,0,0,0-.476-.728L16.709,9.726A.923.923,0,0,1,16.233,9V3.126a2.63,2.63,0,0,0-.207-.928S15.421.9,14.364.75a2.267,2.267,0,0,0-.343-.03h-.006a2.345,2.345,0,0,0-.4.035L13.5.778l-.182.049a2.527,2.527,0,0,0-1.333,1.364,2.961,2.961,0,0,0-.185.935V9a.924.924,0,0,1-.476.728L1.2,14.968A.924.924,0,0,0,.72,15.7v1.681c0,.265.237.414.527.332l10.027-2.827c.29-.081.527.068.527.333V19.8a1.046,1.046,0,0,1-.443.77l-1.33.867a1.046,1.046,0,0,0-.443.77v1.124a.387.387,0,0,0,.532.348l3.366-.84a2.611,2.611,0,0,1,1.065,0l3.369.84a.387.387,0,0,0,.532-.348V22.21a1.046,1.046,0,0,0-.443-.77l-1.33-.867a1.048,1.048,0,0,1-.443-.77V15.215c0-.265.237-.414.527-.332L26.787,17.71Z"
                         transform="translate(-0.72 -0.72)" fill="#4c5658" />
                 </svg>
-                <a href="vuelos">
+                <a href="/vuelos">
                     <p>VUELOS</p>
                 </a>
             </div>
@@ -79,7 +93,7 @@
                         d="M13.3.562C5.951.562,0,6.135,0,13.013S5.951,25.464,13.3,25.464s13.3-5.573,13.3-12.451S20.642.562,13.3.562Zm0,4.82A4.576,4.576,0,0,1,18.015,9.8,4.576,4.576,0,0,1,13.3,14.218,4.576,4.576,0,0,1,8.579,9.8,4.576,4.576,0,0,1,13.3,5.382Zm0,17.271a10.567,10.567,0,0,1-7.855-3.424,6.038,6.038,0,0,1,5.281-3,1.394,1.394,0,0,1,.381.055,7.114,7.114,0,0,0,4.386,0,1.394,1.394,0,0,1,.381-.055,6.038,6.038,0,0,1,5.281,3A10.567,10.567,0,0,1,13.3,22.653Z"
                         transform="translate(0 -0.563)" fill="#4c5658" />
                 </svg>
-                <a href="usuarios">
+                <a href="/usuarios">
                     <p>USUARIOS</p>
                 </a>
             </div>
@@ -90,7 +104,7 @@
                         d="M11.588,7.2a2.127,2.127,0,0,1,0-3.489,3.723,3.723,0,0,1,4.405,0,2.127,2.127,0,0,1,0,3.489A3.686,3.686,0,0,1,11.588,7.2ZM9.113,20.261V9.164H6v11.1c0,3.4,3.487,6.165,7.783,6.165h9.34V23.96h-9.34C11.2,23.96,9.113,22.308,9.113,20.261Zm21.792,5.018-7.892-6.251H17.674V14.49a17.19,17.19,0,0,0,8.561,2.663V14.49a11.957,11.957,0,0,1-7.269-2.515l-2.179-1.911a3.423,3.423,0,0,0-1.074-.617,4.221,4.221,0,0,0-1.494-.284h-.047c-1.93,0-3.5,1.245-3.5,2.774v7.09c0,2.047,2.086,3.7,4.67,3.7h7.892l5.448,4.316Z"
                         transform="translate(-6 -2.993)" fill="#4c5658" />
                 </svg>
-                <a href="pilotos">
+                <a href="/pilotos">
                     <p>PILOTOS</p>
                 </a>
             </div>
@@ -100,7 +114,7 @@
                         d="M28.227,15.847l-9.542,9.121a1.374,1.374,0,0,1-2.329-.923V18.833H8.633a1.331,1.331,0,0,1-1.363-1.3V12.318a1.331,1.331,0,0,1,1.363-1.3h7.724V5.8a1.375,1.375,0,0,1,2.329-.923L28.227,14A1.273,1.273,0,0,1,28.227,15.847ZM10.9,24.7V22.525a.669.669,0,0,0-.682-.652H5.452a1.777,1.777,0,0,1-1.817-1.737V9.712A1.777,1.777,0,0,1,5.452,7.974h4.771a.669.669,0,0,0,.682-.652V5.151a.669.669,0,0,0-.682-.652H5.452A5.338,5.338,0,0,0,0,9.712V20.136a5.338,5.338,0,0,0,5.452,5.212h4.771A.669.669,0,0,0,10.9,24.7Z"
                         transform="translate(0 -4.499)" fill="#4c5658" />
                 </svg>
-                <a href="Login.html">
+                <a href="/logout">
                     <p>CERRAR SESION</p>
                 </a>
                 <!-- <button type="button" onclick="confirm('desea salir?')"><p>CERRAR SESION</p></button> -->
@@ -138,10 +152,10 @@
             }
         </script> 
 
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        
-        
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+        <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 
     </div>
 </body>

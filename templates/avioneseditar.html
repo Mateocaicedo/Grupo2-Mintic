@@ -1,0 +1,114 @@
+{% extends 'layout.html'%}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/aviones.css') }}">
+
+{% endblock css %}
+
+{% block body %}
+<div class="contenedorizq">
+    <div class="arriba">
+        <div id="menubt">
+            <div class="btnhamburguer"></div>
+            <div class="btnhamburguer"></div>
+            <div class="btnhamburguer"></div>
+        </div>
+        <div class="text">
+            <p>AVIONES</p>
+        </div>
+    </div>
+
+    <div id="contenidoaviones">
+
+        <div id="contenedor-tablas-aviones">
+            <div id="arriba-aviones">
+                <div class="infoaviones">
+                    <p>INFORMACIÓN DE AVIONES</p>
+                </div>
+
+            </div>
+
+            <div>
+                <table table id="tabla" tyle="width:100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>MARCA</th>
+                            <th>CAPACIDAD</th>
+                            <th>ACCIONES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for r in row %}
+
+                        <tr>
+                            <td>{{r["id_avion"]}}</td>
+                            <td>{{r["marca"]}}</td>
+                            <td>{{r["capacidad"]}}</td>
+                            <td class="iconosaviones">
+
+                                <div>
+                                    <a onmousedown="MostrarEdit()" class="editar fas fa-edit" type="button" <i></i></a>
+                                </div>
+
+
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>MARCA</th>
+                            <th>CAPACIDAD</th>
+                            <th>IR ACCIONES</th>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </div>
+
+
+        </div>
+        
+    </div>
+    <div id="contenedor-editar" class="contenedor-editar">
+        <div class="contenido-editar">
+            <div class="contenedor1">
+                <p>Editar datos de avion</p>
+                <form method="POST" class="formulario">
+                    <div class="nombre-ape">
+                        <input type="text" name="marca" value="{{unavion['marca']}}" placeholder="Marca">
+                        <input type="number" name="capacidad" value="{{unavion['capacidad']}}" placeholder="Capacidad">
+
+
+                        <div class="enviar">
+                            <button id="boton-nuevoedit" type="submit">Editar</button>
+                            <button id="boton-cancelaredit" onclick="retirar();" type="button">Cancelar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="contenedor-eliminar" class="contenedor-eliminar">
+        <div class="contenido-eliminar">
+            <div class="contenedor2">
+                <p>Desea eliminar el avion?</p>
+                <form method="POST" class="formulario">
+                    <div class="enviar">
+                        <button id="boton-nuevodelete" type="submit">Editar</button>
+                        <button id="boton-cancelardelete" type="button">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock body %}
